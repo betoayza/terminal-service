@@ -1,0 +1,15 @@
+#!/bin/bash
+  
+[Unit]
+Description="Terminal at boot"
+After=network.target graphical.target 
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/gnome-terminal
+User=<user>
+Group=<user>
+WorkingDirectory=$HOME
+
+[Install]
+WantedBy=default.target
